@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Read(//c/Users/skybl/.claude/**)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest init --defaults)",
+      "Bash(chmod +x *)",
+      "Bash(npm run *)",
+      "Bash(npx husky *)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(node .claude/scripts/detect-context.js)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('d:/작업실/study/projects/initial_work/.claude/settings.json','utf8'\\)\\); console.log\\('settings.json valid'\\)\")",
+      "Bash(node \"d:/작업실/study/projects/initial_work/.claude/scripts/detect-context.js\" *)",
+      "Bash(cp \"C:/Users/skybl/.claude/commands/frontend-design.md\" \"d:/작업실/study/projects/initial_work/.claude/commands/\")",
+      "Bash(cp \"C:/Users/skybl/.claude/commands/planning-guide.md\" \"d:/작업실/study/projects/initial_work/.claude/commands/\")",
+      "Bash(cp \"C:/Users/skybl/.claude/commands/backend-guide.md\" \"d:/작업실/study/projects/initial_work/.claude/commands/\")",
+      "Bash(cp \"C:/Users/skybl/.claude/commands/db-guide.md\" \"d:/작업실/study/projects/initial_work/.claude/commands/\")",
+      "Bash(cp \"C:/Users/skybl/.claude/commands/qa-guide.md\" \"d:/작업실/study/projects/initial_work/.claude/commands/\")",
+      "Bash(gh auth *)",
+      "Bash(xargs grep *)",
+      "Bash(python3 -c \" import json with open\\('C:/Users/skybl/AppData/Roaming/Code/User/settings.json', encoding='utf-8'\\) as f: s = json.load\\(f\\) mcp = {k:v for k,v in s.items\\(\\) if 'mcp' in k.lower\\(\\) or 'github' in k.lower\\(\\)} print\\(json.dumps\\(mcp, indent=2, ensure_ascii=False\\)\\) \")",
+      "mcp__plugin_github_github__get_me",
+      "mcp__plugin_github_github__create_repository",
+      "mcp__plugin_github_github__push_files"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/scripts/detect-context.js",
+            "statusMessage": "컨텍스트 분석 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
