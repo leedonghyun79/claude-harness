@@ -32,7 +32,7 @@ claude-harness/
 │   └── claude-code-commands.md  # 슬래시 커맨드 레퍼런스
 ├── scripts/
 │   └── rename-project.js     # ⭐ 프로젝트명 자동 초기화 스크립트
-└── harness-todo/             # 실전 보일러플레이트 (Next.js 14)
+└── templete-todo/            # 실전 보일러플레이트 (Next.js 14)
     ├── app/                  # Next.js App Router
     ├── components/           # UI 컴포넌트
     ├── docs/                 # ADR, 실행 계획, 스펙 문서
@@ -67,7 +67,7 @@ claude-harness/
 각 도메인별로 Claude Code가 참조하는 고품질 가이드 파일.  
 프로젝트에 맞게 수정하여 팀 컨벤션을 자동 적용할 수 있습니다.
 
-### 3. Next.js 보일러플레이트 (`harness-todo/`)
+### 3. Next.js 보일러플레이트 (`templete-todo/`)
 
 하네스 시스템이 내장된 Next.js 14 스타터.  
 새 프로젝트를 시작할 때 이 폴더를 복사해서 사용하세요.
@@ -105,8 +105,8 @@ node scripts/rename-project.js <프로젝트명> ../projects/<프로젝트명>
 
 | 항목 | 내용 |
 |------|------|
-| 폴더 복사 | `harness-todo/` → `<프로젝트명>/` |
-| 이름 치환 | 모든 파일 내 `harness-todo` → 프로젝트명 |
+| 폴더 복사 | `templete-todo/` → `<프로젝트명>/` |
+| 이름 치환 | 모든 파일 내 `templete-todo` → 프로젝트명 |
 | 플레이스홀더 치환 | `{PROJECT_NAME}` → 프로젝트명 (CLAUDE.md 등) |
 | package.json | `"name"` 필드를 프로젝트명으로 갱신 |
 | 제외 항목 | `node_modules`, `.next`, `.git` 등 자동 스킵 |
@@ -149,5 +149,5 @@ Claude가 스펙 작성 + 나머지 플레이스홀더 교체까지 자동으로
 
 - [컨텍스트 라우팅 가이드](guide/context-routing-guide.md)
 - [Claude Code 커맨드 레퍼런스](guide/claude-code-commands.md)
-- [보일러플레이트 README](harness-todo/README.md)
+- [보일러플레이트 README](templete-todo/README.md)
 - [프로젝트 초기화 스크립트](scripts/rename-project.js)

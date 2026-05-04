@@ -10,8 +10,8 @@
  *   node scripts/rename-project.js my-awesome-app ../projects/my-awesome-app
  *
  * 동작:
- *   1. harness-todo/ 폴더를 <프로젝트명>/ (또는 지정한 대상경로)으로 복사
- *   2. 복사된 폴더 내 모든 텍스트 파일에서 'harness-todo' → 프로젝트명 치환
+ *   1. templete-todo/ 폴더를 <프로젝트명>/ (또는 지정한 대상경로)으로 복사
+ *   2. 복사된 폴더 내 모든 텍스트 파일에서 'templete-todo' → 프로젝트명 치환
  *   3. 복사된 폴더 내 모든 텍스트 파일에서 '{PROJECT_NAME}' → 프로젝트명 치환
  *   4. package.json의 "name" 필드를 프로젝트명으로 갱신
  */
@@ -20,7 +20,7 @@ const fs = require('fs');
 const path = require('path');
 
 // ─── 설정 ─────────────────────────────────────────────────────────────────────
-const TEMPLATE_DIR_NAME = 'harness-todo';
+const TEMPLATE_DIR_NAME = 'templete-todo';
 const PLACEHOLDER_NAME  = '{PROJECT_NAME}';
 
 // 텍스트 치환을 적용할 확장자 목록
@@ -170,7 +170,7 @@ function main() {
   copyDirRecursive(templateSrc, destDir);
   console.log(`   ✓ 완료`);
 
-  // 2. 텍스트 치환 (harness-todo → 프로젝트명, {PROJECT_NAME} → 프로젝트명)
+  // 2. 텍스트 치환 (templete-todo → 프로젝트명, {PROJECT_NAME} → 프로젝트명)
   const replacements = [
     [TEMPLATE_DIR_NAME, kebabName],
     [PLACEHOLDER_NAME,  rawName],         // {PROJECT_NAME}은 원본 이름으로
