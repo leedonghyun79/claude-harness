@@ -30,6 +30,8 @@ claude-harness/
 ├── guide/                    # 사용 가이드 문서
 │   ├── context-routing-guide.md  # 컨텍스트 라우팅 상세 가이드
 │   └── claude-code-commands.md  # 슬래시 커맨드 레퍼런스
+├── scripts/
+│   └── rename-project.js     # ⭐ 프로젝트명 자동 초기화 스크립트
 └── harness-todo/             # 실전 보일러플레이트 (Next.js 14)
     ├── app/                  # Next.js App Router
     ├── components/           # UI 컴포넌트
@@ -89,11 +91,32 @@ cp -r claude-harness/.claude my-project/.claude
 
 ### 새 프로젝트를 보일러플레이트로 시작
 
-```bash
-# harness-todo 폴더를 원하는 이름으로 복사
-cp -r claude-harness/harness-todo my-new-project
+`rename-project.js` 스크립트 한 줄로 폴더 복사 + 이름 치환을 자동 처리합니다.
 
-cd my-new-project
+```bash
+# claude-harness/ 폴더 안에서 실행
+node scripts/rename-project.js <프로젝트명>
+
+# 대상 경로를 직접 지정하고 싶을 때
+node scripts/rename-project.js <프로젝트명> ../projects/<프로젝트명>
+```
+
+**스크립트가 자동으로 처리하는 항목:**
+
+| 항목 | 내용 |
+|------|------|
+| 폴더 복사 | `harness-todo/` → `<프로젝트명>/` |
+| 이름 치환 | 모든 파일 내 `harness-todo` → 프로젝트명 |
+| 플레이스홀더 치환 | `{PROJECT_NAME}` → 프로젝트명 (CLAUDE.md 등) |
+| package.json | `"name"` 필드를 프로젝트명으로 갱신 |
+| 제외 항목 | `node_modules`, `.next`, `.git` 등 자동 스킵 |
+
+```bash
+# 예시: my-shop 프로젝트 초기화
+node scripts/rename-project.js my-shop
+
+# 이후 안내되는 명령어 그대로 실행
+cd ../my-shop
 npm install
 cp .env.example .env.local
 npm run dev
@@ -102,10 +125,10 @@ npm run dev
 그 다음 Claude Code에서:
 
 ```
-이 보일러플레이트로 {프로젝트명} 만들고 싶어. {간단한 설명}
+이 보일러플레이트로 my-shop 만들고 싶어. {간단한 설명}
 ```
 
-Claude가 플레이스홀더 교체 + 스펙 작성까지 자동으로 처리합니다.
+Claude가 스펙 작성 + 나머지 플레이스홀더 교체까지 자동으로 처리합니다.
 
 ---
 
@@ -127,3 +150,4 @@ Claude가 플레이스홀더 교체 + 스펙 작성까지 자동으로 처리합
 - [컨텍스트 라우팅 가이드](guide/context-routing-guide.md)
 - [Claude Code 커맨드 레퍼런스](guide/claude-code-commands.md)
 - [보일러플레이트 README](harness-todo/README.md)
+- [프로젝트 초기화 스크립트](scripts/rename-project.js)
