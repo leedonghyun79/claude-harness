@@ -1,4 +1,4 @@
-# claude-harness
+# claude-harness templete
 
 > **Claude Code 하네스 시스템** — 도메인별 자동 가이드 라우팅 + 웹 개발 스킬 가이드 + Next.js 보일러플레이트
 
